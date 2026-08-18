@@ -1,75 +1,108 @@
-# React + TypeScript + Vite
+🎮 Jogo de Sobrevivência
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto desenvolvido em React + TypeScript com o objetivo de criar um jogo de sobrevivência baseado em turnos.
 
-Currently, two official plugins are available:
+Durante a partida, o jogador precisa administrar seus recursos e escolher suas ações estrategicamente para conseguir sobreviver e alcançar a condição de vitória.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🕹️ Como funciona
 
-## React Compiler
+O jogador inicia a partida com:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* ❤️ Vida: 100
+* ⚡ Energia: 100
+* 🍖 Comida: 5
+* 🧰 Recursos: 0
 
-## Expanding the ESLint configuration
+Durante o jogo, é possível realizar quatro ações:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🍖 Comer
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Consome uma unidade de comida e recupera parte da vida do jogador.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+💤 Descansar
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Recupera vida e energia, respeitando o limite máximo de 100.
 
-```
+🔨 Trabalhar
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Consome energia e aumenta a quantidade de recursos do jogador.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🧭 Explorar
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Gera um evento aleatório que pode:
 
-```
+* encontrar comida;
+* encontrar recursos;
+* causar perda de vida;
+* causar perda de energia;
+* ou não gerar nenhum acontecimento.
+
+🔄 Sistema de ações
+
+O jogador pode realizar até duas ações antes de precisar explorar.
+
+Após duas ações, Comer, Descansar e Trabalhar ficam temporariamente bloqueados.
+
+O jogador precisa realizar uma exploração para liberar novamente as demais ações.
+
+🛠️ Tecnologias
+
+* React
+* TypeScript
+* Bootstrap
+* CSS Modules
+* Vite
+
+🧠 Conceitos praticados
+
+O projeto foi criado principalmente para praticar conceitos fundamentais do React, incluindo:
+
+* Componentes
+* Props
+* useState
+* Gerenciamento de estado
+* Eventos
+* Renderização da interface
+* Comunicação entre componentes
+* Tipagem com TypeScript
+
+Durante o desenvolvimento também serão utilizados:
+
+* useEffect
+* useCallback
+* localStorage
+
+📂 Estrutura
+
+src/
+├── components/
+│   ├── eat/
+│   ├── exploration/
+│   ├── sleeping/
+│   ├── status/
+│   └── work/
+├── css/
+├── App.tsx
+└── main.tsx
+
+🚧 Em desenvolvimento
+
+O projeto ainda está sendo desenvolvido.
+
+Atualmente estão sendo implementados recursos como:
+
+* histórico das ações;
+* condição de vitória;
+* condição de derrota;
+* nova partida;
+* persistência da partida com localStorage;
+* utilização de useEffect;
+* utilização de useCallback.
+
+🏆 Objetivo
+
+O objetivo do jogador é administrar corretamente seus recursos e atingir 50 recursos antes que sua vida ou energia chegue a zero.
+
+⸻
+
+Projeto desenvolvido como atividade prática de React + TypeScript.
