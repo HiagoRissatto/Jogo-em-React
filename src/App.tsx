@@ -7,7 +7,8 @@ import Exploration from './components/exploration/exploration.tsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-
+  
+const [acoes,setAcoes] = useState(0);
 const [vida,setVida] = useState(100);
 const [energia,setEnergia] = useState(100);
 const [comida,setComida] = useState(5);
