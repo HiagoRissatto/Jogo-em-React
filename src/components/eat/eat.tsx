@@ -19,7 +19,7 @@ function Eat({acoes,vida,comida,setComida,setVida,setAcoes}:EatProps){
     }
     return(
         <>
-            <button onClick={comer} disabled={acoes >= 2}>Comer</button>
+            <button className="btn btn-success m-2" onClick={comer} disabled={acoes >= 2}>Comer</button>
         </>
     )
 }

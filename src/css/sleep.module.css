@@ -1,0 +1,9 @@
+.botao{
+    transition: all 0.2s ease;
+}
+.botao:hover{
+    transform: scale(-3px);
+}
+.botao:active{
+    transform: scale(0.95);
+}

@@ -1,3 +1,4 @@
+import sleep from "../../css/sleep.module.css"
 interface SleepProps{
     acoes: number,
     vida:number,
@@ -15,7 +16,7 @@ function Sleep({acoes,vida,energia,setVida,setEnergia,setAcoes}:SleepProps){
     }
     return(
         <>  
-            <button onClick={descansar} disabled={acoes >= 2}>Descansar</button>
+            <button className={`btn btn-info m-2 ${sleep.botao}`} onClick={descansar} disabled={acoes >= 2}>Descansar</button>
         </>
     )
 }

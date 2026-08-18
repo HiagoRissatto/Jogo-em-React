@@ -19,7 +19,7 @@ function Work({ acoes, recurso, energia, setRecurso, setEnergia, setAcoes }: Wor
   }
   return (
     <>
-      <button onClick={trabalhar} disabled={acoes >= 2}>Trabalhar</button>
+      <button className="btn btn-warning m-2" onClick={trabalhar} disabled={acoes >= 2}>Trabalhar</button>
     </>
   );
 }

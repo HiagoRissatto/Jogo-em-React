@@ -1,0 +1,6 @@
+.botao-acao{
+    transition: all 0.2s ease;
+}
+.botao-acao:active{
+    transform: scale(0.95);
+}

@@ -1,3 +1,4 @@
+import exploratiopnStyles from "../../css/exploration.module.css"
 interface ExplorationProps {
     vida: number;
     energia: number;
@@ -37,7 +38,7 @@ interface ExplorationProps {
     }
     return (
       <>
-        <button onClick={explorar} >Explorar</button>
+        <button className={`btn btn-primary m-2 botao-acao ${exploratiopnStyles.explorar}`} onClick={explorar} >Explorar</button>
       </>
     );
 }
