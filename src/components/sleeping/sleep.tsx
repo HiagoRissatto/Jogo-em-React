@@ -15,7 +15,7 @@ function Sleep({acoes,vida,energia,setVida,setEnergia,setAcoes}:SleepProps){
     }
     return(
         <>  
-            <button onClick={descansar}>Descansar</button>
+            <button onClick={descansar} disabled={acoes >= 2}>Descansar</button>
         </>
     )
 }

@@ -18,10 +18,10 @@ const [recurso,setRecurso] = useState(0);
   return (
     <>
       <Status vida={vida} energia={energia} comida={comida} recurso={recurso}/>
-      <Sleep vida={vida} energia={energia} setVida={setVida} setEnergia={setEnergia}/>
-      <Work recurso={recurso} energia={energia} setRecurso={setRecurso} setEnergia={setEnergia}/>
-      <Exploration vida={vida} energia={energia} comida={comida} recurso={recurso} setVida={setVida} setEnergia={setEnergia} setComida={setComida} setRecurso={setRecurso}/>
-      <Eat vida={vida} comida={comida} setComida={setComida} setVida={setVida}/>
+      <Sleep acoes={acoes} vida={vida} energia={energia} setVida={setVida} setEnergia={setEnergia} setAcoes={setAcoes} />
+      <Work acoes={acoes} recurso={recurso} energia={energia} setRecurso={setRecurso} setEnergia={setEnergia} setAcoes={setAcoes}/>
+      <Exploration vida={vida} energia={energia} comida={comida} recurso={recurso} setVida={setVida} setEnergia={setEnergia} setComida={setComida} setRecurso={setRecurso} setAcoes={setAcoes}/>
+      <Eat acoes={acoes} vida={vida} comida={comida} setComida={setComida} setVida={setVida} setAcoes={setAcoes}/>
     </>
   )
 }

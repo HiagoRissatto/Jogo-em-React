@@ -1,23 +1,26 @@
 interface WorkProps {
+  acoes: number;
   recurso: number;
   energia: number;
   setRecurso: (value: number) => void;
   setEnergia: (value: number) => void;
+  setAcoes: (value: number) => void;
 }
 
-function Work({ recurso, energia, setRecurso, setEnergia }: WorkProps) {
+function Work({ acoes, recurso, energia, setRecurso, setEnergia, setAcoes }: WorkProps) {
   function trabalhar() {
     if (energia >= 25) {
       setEnergia(Math.max(energia - 25, 0));
-      setRecurso(Math.max(recurso + 10, 0));
-    }else{
-        alert("Você não tem energia suficiente para trabalhar!");
+      setRecurso(recurso + 10)
+        setAcoes(acoes + 1);
+    } else {
+      alert("Você não tem energia suficiente para trabalhar!");
     }
   }
-    return (
-      <>
-        <button onClick={trabalhar}>Trabalhar</button>
-      </>
-    );
-  }
+  return (
+    <>
+      <button onClick={trabalhar} disabled={acoes >= 2}>Trabalhar</button>
+    </>
+  );
+}
 export default Work;
